@@ -130,7 +130,9 @@ exports.Prisma.UserScalarFieldEnum = {
   bio: 'bio',
   isActive: 'isActive',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  emailVerified: 'emailVerified',
+  image: 'image'
 };
 
 exports.Prisma.CategoryScalarFieldEnum = {
