@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { requireAuth } from "../middleware/auth.js";
-import { createShortUrl } from "../controllers/urlController.js";
+import { createPostt } from "../controllers/postController.js";
 
 const router = Router();
 
