@@ -2,6 +2,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { auth } from "./lib/auth.js"
+import postRoutes from "./routes/postRoutes.js";
 import { toNodeHandler } from "better-auth/node";
 import { requireAuth } from "./middleware/auth.js";
 
@@ -29,6 +30,8 @@ app.all("/api/auth/*path", toNodeHandler(auth));
 app.get("/health", (req, res) => {
   res.json({ status: "OK", timestamp: new Date().toISOString() });
 });
+
+app.use("/api/posts", postRoutes);
 
 // Rota de teste
 app.get("/", (req, res) => {
