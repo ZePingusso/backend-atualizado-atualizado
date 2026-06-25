@@ -5,15 +5,30 @@ import { auth } from "./lib/auth.js"
 import postRoutes from "./routes/postRoutes.js";
 import { toNodeHandler } from "better-auth/node";
 import { requireAuth } from "./middleware/auth.js";
+import cors from "cors";
 
 // Configuração inicial
+
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5500;
 
 // Middleware global
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
+
 app.use(express.json());
+
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.originalUrl}`);
+  console.log("Origin:", req.headers.origin);
+  next();
+});
 
 app.get("/api/me", requireAuth, (req, res) => {
   res.json({

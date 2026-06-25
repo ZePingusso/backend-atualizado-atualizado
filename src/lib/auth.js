@@ -13,7 +13,11 @@ export const auth = betterAuth({
     enabled: true,
     requireEmailVerification: false,
   },
-
+    trustedOrigins: [
+    "http://localhost:3000",
+    "http://localhost:5500"
+  ],
+  
   // Configurações de segurança
   secret: process.env.BETTER_AUTH_SECRET,
 
