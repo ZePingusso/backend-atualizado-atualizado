@@ -28,7 +28,7 @@ export async function createPost(req, res) {
     ...req.body,
     authorId: req.user.id,
   });
-
+  
   res.status(201).json(post);
 }
 

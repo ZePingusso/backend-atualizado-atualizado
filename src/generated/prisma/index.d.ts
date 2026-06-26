@@ -4037,6 +4037,7 @@ export namespace Prisma {
     coverImage: string | null
     published: boolean | null
     publishedAt: Date | null
+    category: string | null
     views: number | null
     authorId: string | null
     createdAt: Date | null
@@ -4052,6 +4053,7 @@ export namespace Prisma {
     coverImage: string | null
     published: boolean | null
     publishedAt: Date | null
+    category: string | null
     views: number | null
     authorId: string | null
     createdAt: Date | null
@@ -4067,6 +4069,7 @@ export namespace Prisma {
     coverImage: number
     published: number
     publishedAt: number
+    category: number
     views: number
     authorId: number
     createdAt: number
@@ -4092,6 +4095,7 @@ export namespace Prisma {
     coverImage?: true
     published?: true
     publishedAt?: true
+    category?: true
     views?: true
     authorId?: true
     createdAt?: true
@@ -4107,6 +4111,7 @@ export namespace Prisma {
     coverImage?: true
     published?: true
     publishedAt?: true
+    category?: true
     views?: true
     authorId?: true
     createdAt?: true
@@ -4122,6 +4127,7 @@ export namespace Prisma {
     coverImage?: true
     published?: true
     publishedAt?: true
+    category?: true
     views?: true
     authorId?: true
     createdAt?: true
@@ -4224,6 +4230,7 @@ export namespace Prisma {
     coverImage: string | null
     published: boolean
     publishedAt: Date | null
+    category: string
     views: number
     authorId: string
     createdAt: Date
@@ -4258,6 +4265,7 @@ export namespace Prisma {
     coverImage?: boolean
     published?: boolean
     publishedAt?: boolean
+    category?: boolean
     views?: boolean
     authorId?: boolean
     createdAt?: boolean
@@ -4277,6 +4285,7 @@ export namespace Prisma {
     coverImage?: boolean
     published?: boolean
     publishedAt?: boolean
+    category?: boolean
     views?: boolean
     authorId?: boolean
     createdAt?: boolean
@@ -4293,6 +4302,7 @@ export namespace Prisma {
     coverImage?: boolean
     published?: boolean
     publishedAt?: boolean
+    category?: boolean
     views?: boolean
     authorId?: boolean
     createdAt?: boolean
@@ -4309,13 +4319,14 @@ export namespace Prisma {
     coverImage?: boolean
     published?: boolean
     publishedAt?: boolean
+    category?: boolean
     views?: boolean
     authorId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type PostOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "slug" | "content" | "excerpt" | "coverImage" | "published" | "publishedAt" | "views" | "authorId" | "createdAt" | "updatedAt", ExtArgs["result"]["post"]>
+  export type PostOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "slug" | "content" | "excerpt" | "coverImage" | "published" | "publishedAt" | "category" | "views" | "authorId" | "createdAt" | "updatedAt", ExtArgs["result"]["post"]>
   export type PostInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     author?: boolean | UserDefaultArgs<ExtArgs>
     categories?: boolean | Post$categoriesArgs<ExtArgs>
@@ -4345,6 +4356,7 @@ export namespace Prisma {
       coverImage: string | null
       published: boolean
       publishedAt: Date | null
+      category: string
       views: number
       authorId: string
       createdAt: Date
@@ -4783,6 +4795,7 @@ export namespace Prisma {
     readonly coverImage: FieldRef<"Post", 'String'>
     readonly published: FieldRef<"Post", 'Boolean'>
     readonly publishedAt: FieldRef<"Post", 'DateTime'>
+    readonly category: FieldRef<"Post", 'String'>
     readonly views: FieldRef<"Post", 'Int'>
     readonly authorId: FieldRef<"Post", 'String'>
     readonly createdAt: FieldRef<"Post", 'DateTime'>
@@ -10820,6 +10833,7 @@ export namespace Prisma {
     coverImage: 'coverImage',
     published: 'published',
     publishedAt: 'publishedAt',
+    category: 'category',
     views: 'views',
     authorId: 'authorId',
     createdAt: 'createdAt',
@@ -11154,6 +11168,7 @@ export namespace Prisma {
     coverImage?: StringNullableFilter<"Post"> | string | null
     published?: BoolFilter<"Post"> | boolean
     publishedAt?: DateTimeNullableFilter<"Post"> | Date | string | null
+    category?: StringFilter<"Post"> | string
     views?: IntFilter<"Post"> | number
     authorId?: StringFilter<"Post"> | string
     createdAt?: DateTimeFilter<"Post"> | Date | string
@@ -11172,6 +11187,7 @@ export namespace Prisma {
     coverImage?: SortOrderInput | SortOrder
     published?: SortOrder
     publishedAt?: SortOrderInput | SortOrder
+    category?: SortOrder
     views?: SortOrder
     authorId?: SortOrder
     createdAt?: SortOrder
@@ -11193,6 +11209,7 @@ export namespace Prisma {
     coverImage?: StringNullableFilter<"Post"> | string | null
     published?: BoolFilter<"Post"> | boolean
     publishedAt?: DateTimeNullableFilter<"Post"> | Date | string | null
+    category?: StringFilter<"Post"> | string
     views?: IntFilter<"Post"> | number
     authorId?: StringFilter<"Post"> | string
     createdAt?: DateTimeFilter<"Post"> | Date | string
@@ -11211,6 +11228,7 @@ export namespace Prisma {
     coverImage?: SortOrderInput | SortOrder
     published?: SortOrder
     publishedAt?: SortOrderInput | SortOrder
+    category?: SortOrder
     views?: SortOrder
     authorId?: SortOrder
     createdAt?: SortOrder
@@ -11234,6 +11252,7 @@ export namespace Prisma {
     coverImage?: StringNullableWithAggregatesFilter<"Post"> | string | null
     published?: BoolWithAggregatesFilter<"Post"> | boolean
     publishedAt?: DateTimeNullableWithAggregatesFilter<"Post"> | Date | string | null
+    category?: StringWithAggregatesFilter<"Post"> | string
     views?: IntWithAggregatesFilter<"Post"> | number
     authorId?: StringWithAggregatesFilter<"Post"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Post"> | Date | string
@@ -11767,6 +11786,7 @@ export namespace Prisma {
     coverImage?: string | null
     published?: boolean
     publishedAt?: Date | string | null
+    category: string
     views?: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -11784,6 +11804,7 @@ export namespace Prisma {
     coverImage?: string | null
     published?: boolean
     publishedAt?: Date | string | null
+    category: string
     views?: number
     authorId: string
     createdAt?: Date | string
@@ -11801,6 +11822,7 @@ export namespace Prisma {
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     published?: BoolFieldUpdateOperationsInput | boolean
     publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    category?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11818,6 +11840,7 @@ export namespace Prisma {
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     published?: BoolFieldUpdateOperationsInput | boolean
     publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    category?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
     authorId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11835,6 +11858,7 @@ export namespace Prisma {
     coverImage?: string | null
     published?: boolean
     publishedAt?: Date | string | null
+    category: string
     views?: number
     authorId: string
     createdAt?: Date | string
@@ -11850,6 +11874,7 @@ export namespace Prisma {
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     published?: BoolFieldUpdateOperationsInput | boolean
     publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    category?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11864,6 +11889,7 @@ export namespace Prisma {
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     published?: BoolFieldUpdateOperationsInput | boolean
     publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    category?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
     authorId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -12517,6 +12543,7 @@ export namespace Prisma {
     coverImage?: SortOrder
     published?: SortOrder
     publishedAt?: SortOrder
+    category?: SortOrder
     views?: SortOrder
     authorId?: SortOrder
     createdAt?: SortOrder
@@ -12536,6 +12563,7 @@ export namespace Prisma {
     coverImage?: SortOrder
     published?: SortOrder
     publishedAt?: SortOrder
+    category?: SortOrder
     views?: SortOrder
     authorId?: SortOrder
     createdAt?: SortOrder
@@ -12551,6 +12579,7 @@ export namespace Prisma {
     coverImage?: SortOrder
     published?: SortOrder
     publishedAt?: SortOrder
+    category?: SortOrder
     views?: SortOrder
     authorId?: SortOrder
     createdAt?: SortOrder
@@ -13420,6 +13449,7 @@ export namespace Prisma {
     coverImage?: string | null
     published?: boolean
     publishedAt?: Date | string | null
+    category: string
     views?: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -13436,6 +13466,7 @@ export namespace Prisma {
     coverImage?: string | null
     published?: boolean
     publishedAt?: Date | string | null
+    category: string
     views?: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -13583,6 +13614,7 @@ export namespace Prisma {
     coverImage?: StringNullableFilter<"Post"> | string | null
     published?: BoolFilter<"Post"> | boolean
     publishedAt?: DateTimeNullableFilter<"Post"> | Date | string | null
+    category?: StringFilter<"Post"> | string
     views?: IntFilter<"Post"> | number
     authorId?: StringFilter<"Post"> | string
     createdAt?: DateTimeFilter<"Post"> | Date | string
@@ -13905,6 +13937,7 @@ export namespace Prisma {
     coverImage?: string | null
     published?: boolean
     publishedAt?: Date | string | null
+    category: string
     views?: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -13921,6 +13954,7 @@ export namespace Prisma {
     coverImage?: string | null
     published?: boolean
     publishedAt?: Date | string | null
+    category: string
     views?: number
     authorId: string
     createdAt?: Date | string
@@ -13971,6 +14005,7 @@ export namespace Prisma {
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     published?: BoolFieldUpdateOperationsInput | boolean
     publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    category?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13987,6 +14022,7 @@ export namespace Prisma {
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     published?: BoolFieldUpdateOperationsInput | boolean
     publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    category?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
     authorId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -14027,6 +14063,7 @@ export namespace Prisma {
     coverImage?: string | null
     published?: boolean
     publishedAt?: Date | string | null
+    category: string
     views?: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -14043,6 +14080,7 @@ export namespace Prisma {
     coverImage?: string | null
     published?: boolean
     publishedAt?: Date | string | null
+    category: string
     views?: number
     authorId: string
     createdAt?: Date | string
@@ -14175,6 +14213,7 @@ export namespace Prisma {
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     published?: BoolFieldUpdateOperationsInput | boolean
     publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    category?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -14191,6 +14230,7 @@ export namespace Prisma {
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     published?: BoolFieldUpdateOperationsInput | boolean
     publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    category?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
     authorId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -14479,6 +14519,7 @@ export namespace Prisma {
     coverImage?: string | null
     published?: boolean
     publishedAt?: Date | string | null
+    category: string
     views?: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -14528,6 +14569,7 @@ export namespace Prisma {
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     published?: BoolFieldUpdateOperationsInput | boolean
     publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    category?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -14544,6 +14586,7 @@ export namespace Prisma {
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     published?: BoolFieldUpdateOperationsInput | boolean
     publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    category?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -14560,6 +14603,7 @@ export namespace Prisma {
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     published?: BoolFieldUpdateOperationsInput | boolean
     publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    category?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string

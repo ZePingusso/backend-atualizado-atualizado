@@ -24,8 +24,17 @@ export async function buscarPostPorId(id) {
 }
 
 export async function criarPost(data) {
+  const slug = data.title
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9\-]/g, "");
+
   return prisma.post.create({
-    data,
+    data: {
+      ...data,
+      slug,
+    },
   });
 }
 

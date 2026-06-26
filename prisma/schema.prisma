@@ -50,6 +50,7 @@ model Post {
   coverImage  String?   @map("cover_image")
   published   Boolean   @default(false)
   publishedAt DateTime? @map("published_at")
+  category    String
   views       Int       @default(0)
 
   authorId  String   @map("author_id")
