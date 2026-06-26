@@ -24,21 +24,32 @@ export async function getPostById(req, res) {
 }
 
 export async function createPost(req, res) {
-  const post = await criarPost({
-    ...req.body,
-    authorId: req.user.id,
-  });
-  
-  res.status(201).json(post);
+  try {
+    // Remove o campo image que está causando o erro
+    const { image, coverImage, ...postData } = req.body;
+
+    const post = await criarPost({
+      ...postData,
+      authorId: req.user.id,
+    });
+
+    res.status(201).json(post);
+  } catch (error) {
+    console.error("Erro ao criar post:", error);
+    res.status(400).json({ 
+      error: "Erro ao criar post" 
+    });
+  }
 }
 
 export async function updatePost(req, res) {
-  const post = await atualizarPost(
-    req.params.id,
-    req.body
-  );
-
-  res.json(post);
+  try {
+    const post = await atualizarPost(req.params.id, req.body);
+    res.json(post);
+  } catch (error) {
+    console.error("Erro ao atualizar post:", error);
+    res.status(400).json({ error: "Erro ao atualizar post" });
+  }
 }
 
 export async function deletePost(req, res) {

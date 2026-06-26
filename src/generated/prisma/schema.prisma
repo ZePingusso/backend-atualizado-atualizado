@@ -11,7 +11,7 @@ model User {
   id           String   @id @default(uuid())
   email        String   @unique
   passwordHash String?  @map("password_hash")
-  name         String
+  name         String? // ← MUDE PARA OPCIONAL (adicione o ?)
   username     String?  @unique
   avatarUrl    String?  @map("avatar_url")
   bio          String?  @db.Text
@@ -19,13 +19,13 @@ model User {
   createdAt    DateTime @default(now()) @map("created_at")
   updatedAt    DateTime @updatedAt @map("updated_at")
 
+  emailVerified Boolean @default(false)
+  image         String?
+
   posts    Post[]
   comments Comment[]
   sessions Session[]
   accounts Account[]
-
-  emailVerified Boolean @default(false)
-  image         String?
 
   @@map("users")
 }
@@ -47,7 +47,6 @@ model Post {
   slug        String    @unique
   content     String    @db.Text
   excerpt     String?   @db.Text
-  coverImage  String?   @map("cover_image")
   published   Boolean   @default(false)
   publishedAt DateTime? @map("published_at")
   category    String

@@ -24,7 +24,10 @@ export async function buscarPostPorId(id) {
 }
 
 export async function criarPost(data) {
-  const slug = data.title
+  // Remove o campo "image" que está causando erro no Prisma
+  const { image, coverImage, ...postData } = data;
+
+  const slug = postData.title
     .toLowerCase()
     .trim()
     .replace(/\s+/g, "-")
@@ -32,16 +35,18 @@ export async function criarPost(data) {
 
   return prisma.post.create({
     data: {
-      ...data,
+      ...postData,
       slug,
     },
   });
 }
 
 export async function atualizarPost(id, data) {
+  const { image, coverImage, ...updateData } = data;
+
   return prisma.post.update({
     where: { id },
-    data,
+    data: updateData,
   });
 }
 
